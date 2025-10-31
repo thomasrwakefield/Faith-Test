@@ -22,3 +22,23 @@ This project provides a simple set of HTML pages styled with TailwindCSS. Replac
 | `office-photo.jpg` | 800x600 | Contact page information section |
 
 All images are stored in the `images/` directory (create it if it doesn’t exist). Replace these placeholders with actual images using the same filenames and suggested dimensions for best results.
+
+## Reference Photo Library
+
+To keep website refreshes fast, a dedicated drop folder has been added at `assets/reference-images/`. Any JPEG or PNG files that follow the names below will automatically appear in the "Reference Photo Library" section on the home page:
+
+- `pastor-01.jpg`
+- `pastor-02.jpg`
+- `pastor-03.jpg`
+- `pastor-04.jpg`
+- `pastor-05.jpg`
+- `pastor-06.jpg`
+
+Steps to update the gallery:
+
+1. Gather the 5–6 photos you would like to showcase (1600 × 1200px images under 2&nbsp;MB are ideal).
+2. Rename each file to match the list above.
+3. Copy the files into `assets/reference-images/`.
+4. Refresh the site in your browser to confirm the images display without the placeholder cards.
+
+If a slot does not have a matching image, a helpful placeholder will remain in place so you always know which filename to add next.
