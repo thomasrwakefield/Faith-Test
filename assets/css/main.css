@@ -199,6 +199,64 @@ body {
     position: relative;
 }
 
+.reference-slot {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1.25rem;
+    border: 2px dashed rgba(15, 118, 110, 0.35);
+    background: linear-gradient(135deg, rgba(226, 232, 240, 0.5), rgba(209, 250, 229, 0.3));
+    display: grid;
+    place-items: center;
+    aspect-ratio: 4 / 3;
+    min-height: 14rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.reference-slot.has-image {
+    border-style: solid;
+    border-color: rgba(15, 118, 110, 0.15);
+    box-shadow: 0 18px 40px -32px rgba(15, 118, 110, 0.65);
+}
+
+.reference-slot:hover {
+    transform: translateY(-4px);
+    border-color: rgba(16, 185, 129, 0.55);
+}
+
+.reference-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.reference-placeholder {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    padding: 1.5rem;
+    text-align: center;
+    color: #0f172a;
+    font-weight: 600;
+    line-height: 1.5;
+    background: rgba(248, 250, 252, 0.75);
+    backdrop-filter: blur(4px);
+}
+
+.reference-placeholder__label {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    font-size: 0.95rem;
+}
+
+.reference-placeholder__label strong {
+    font-family: 'Roboto Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    color: #047857;
+}
+
 .testimonial-card p:first-of-type::after {
     content: "\201D";
     font-size: 3rem;

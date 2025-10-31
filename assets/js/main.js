@@ -60,4 +60,44 @@ document.addEventListener('DOMContentLoaded', () => {
     if (slides.length > 1) {
         restartTimer();
     }
+
+    const referenceSlots = document.querySelectorAll('[data-reference-slot]');
+    referenceSlots.forEach((slot) => {
+        const img = slot.querySelector('img');
+        const placeholder = slot.querySelector('[data-placeholder]');
+
+        if (!img || !placeholder) return;
+
+        const showImage = () => {
+            if (img.classList.contains('hidden')) {
+                img.classList.remove('hidden');
+            }
+            placeholder.classList.add('hidden');
+            slot.classList.add('has-image');
+        };
+
+        const showPlaceholder = () => {
+            img.classList.add('hidden');
+            placeholder.classList.remove('hidden');
+            slot.classList.remove('has-image');
+        };
+
+        img.addEventListener('load', () => {
+            if (img.naturalWidth > 0) {
+                showImage();
+            }
+        });
+
+        img.addEventListener('error', showPlaceholder);
+
+        if (img.complete) {
+            if (img.naturalWidth > 0) {
+                showImage();
+            } else {
+                showPlaceholder();
+            }
+        } else {
+            showPlaceholder();
+        }
+    });
 });
