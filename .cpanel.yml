@@ -3,7 +3,7 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home1/spreaeb3/public_html/website_153d2837/
     - /bin/rsync -avz --delete --exclude='.git*' --exclude='.cpanel.yml' ./ $DEPLOYPATH
-    - echo "Options -Indexes\nDirectoryIndex index.html\n<IfModule mod_headers.c>\n  Header set Access-Control-Allow-Origin \"*\"\n</IfModule>" > $DEPLOYPATH/.htaccess
+    - printf "Options -Indexes\nDirectoryIndex index.html\n<IfModule mod_headers.c>\n  Header set Access-Control-Allow-Origin \"*\"\n</IfModule>\n" > $DEPLOYPATH/.htaccess
     - chmod 644 $DEPLOYPATH/.htaccess
     - find $DEPLOYPATH -type d -exec chmod 755 {} \;
     - find $DEPLOYPATH -type f -exec chmod 644 {} \;
