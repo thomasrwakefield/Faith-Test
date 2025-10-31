@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home1/spreaeb3/public_html/website_153d2837/
+    - /bin/rsync -avz --delete --exclude='.git*' --exclude='.cpanel.yml' ./ $DEPLOYPATH
